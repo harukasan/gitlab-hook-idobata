@@ -10,8 +10,10 @@ class App < Sinatra::Base
     data = JSON.parse request.body.read
 
     Thread.new do
-      message = Slim::Template.new("templates/push.slim").render(self, data: data)
-      Idobata::Message.create source: message, format: :html if message
+      if ENV['BRANCH'] == 'all' || data["ref"].match(/#{ENV['BRANCH']}/)
+        message = Slim::Template.new("templates/push.slim").render(self, data: data)
+        Idobata::Message.create source: message, format: :html if message
+      end
     end
 
     { status: "ok" }.to_json
