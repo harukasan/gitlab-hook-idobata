@@ -4,7 +4,7 @@ div
   span
     b = data["user_name"]
     = " pushed to "
-    b = data["ref"].split("/").last
+    b = data["ref"].gsub("refs/heads/", "")
 div
   ul
     - data["commits"][0..4].each do |commit|
