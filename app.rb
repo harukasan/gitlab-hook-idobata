@@ -3,7 +3,7 @@ require 'json'
 require 'idobata'
 require 'slim'
 
-Idobata.hook_url = "https://idobata.io/hook/f89ab32a-93f1-47e4-b6e8-c8b68b3e9943"
+Idobata.hook_url = ENV['HOOK_URL']
 
 class App < Sinatra::Base
   post '/push.json' do
