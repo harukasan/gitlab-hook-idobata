@@ -1,0 +1,17 @@
+div
+  span.label = data["repository"]["name"]
+  = " "
+  span
+    b = data["user_name"]
+    = " pushed to "
+    b = data["ref"].split("/").last
+div
+  ul
+    - data["commits"][0..4].each do |commit|
+      li
+        small
+          a href=commit["url"]
+            span.commit-id = commit["id"][0..7]
+          = " "
+          span = commit["message"]
+
