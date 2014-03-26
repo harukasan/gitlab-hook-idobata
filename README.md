@@ -28,3 +28,8 @@ $ foreman start web
   URL: http://$HOST:$PORT/push.json
   Trigger: ✓ Push events
 ```
+
+## Copyright
+
+- Copyright (c) 2014 MICHII Shunske (harukasan)
+- License: MIT License (see LICENSE.md)
