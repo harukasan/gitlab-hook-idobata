@@ -15,8 +15,10 @@ gitlab web hook server to notify idobata.
 ```
 $ git clone git@github.com:harukasan/gitlab-hook-idobata
 $ cd gitlab-hook-idobata
-$ bundle install
-$ foreman start web
+$ bundle install --path vendor/bundle
+$ cp dotenv .env
+$ vim .env # to edit idobata hook url
+$ bundle exec foreman start web
 ```
 
 ### Set gitlab hook:
