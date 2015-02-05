@@ -1,3 +1,5 @@
 PORT=10326
 HOOK_URL=https://idobata.io/hook/#{EDIT HERE}
 BRANCH=all # or specified branch (eg. master)
+GITLAB_API_ENDPOINT=http://#{EDIT HERE}/api/v3
+GITLAB_API_PRIVATE_TOKEN=#{EDIT HERE}
