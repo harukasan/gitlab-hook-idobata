@@ -2,7 +2,7 @@ div
   span.label = data["repository"]["name"]
   = " "
   span
-    b = data["user_name"]
+    b = "@#{data['user_name']}"
     = " pushed to "
     b = data["ref"].gsub("refs/heads/", "")
 div
