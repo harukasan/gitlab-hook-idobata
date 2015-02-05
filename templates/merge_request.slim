@@ -1,0 +1,15 @@
+div
+  span.label = project['name_with_namespace']
+  = " "
+  span
+    b = "@#{data['user']['username']}"
+    = " "
+    = mr['state']
+    = " "
+    a href="#{project['web_url']}/merge_requests/#{mr['iid']}" = "\##{mr['iid']}"
+    = " "
+    b = mr['title']
+pre
+  = mr["description"]
+div
+  = "Assignee: @#{mr['assignee']['username']}"
