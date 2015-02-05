@@ -5,8 +5,8 @@ gitlab web hook server to notify idobata.
 ## Feature
 
 - notify push events
+- notify merge request events
 - <del>notify issue events</del> (not yet)
-- <del>notify merge request events</del> (not yet)
 
 ## Usage
 
@@ -29,6 +29,11 @@ $ bundle exec foreman start web
 ```
   URL: http://$HOST:$PORT/push.json
   Trigger: ✓ Push events
+```
+
+```
+  URL: http://$HOST:$PORT/merge_request.json
+  Trigger: ✓ Merge Request events
 ```
 
 ## Copyright
