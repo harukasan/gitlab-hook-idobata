@@ -29,12 +29,8 @@ class App < Sinatra::Base
     data = JSON.parse request.body.read
     project = Gitlab.project(data["object_attributes"]["target_project_id"]).to_hash
     mr = Gitlab.merge_request(data["object_attributes"]["target_project_id"], data["object_attributes"]["id"]).to_hash
-    p project
-    p data
-    p mr
 
     message = Slim::Template.new("templates/merge_request.slim").render(self, data: data, project: project, mr: mr)
-    p message
     Idobata::Message.create source: message, format: :html if message
 
     { status: "ok" }.to_json
