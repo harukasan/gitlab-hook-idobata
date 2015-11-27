@@ -36,6 +36,8 @@ $ bundle exec foreman start web
   Trigger: ✓ Merge Request events
 ```
 
+To use merge request hool, the gitlab API setting is required.
+
 ## Copyright
 
 - Copyright (c) 2014 MICHII Shunske (harukasan)
